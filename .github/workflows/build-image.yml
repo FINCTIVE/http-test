@@ -1,5 +1,11 @@
 name: build
-on: [ push, pull_request ]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/README.md'
+      - 'deploy/**'
 jobs:
   build_image:
     runs-on: ubuntu-latest
